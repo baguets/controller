@@ -1,5 +1,5 @@
 {
-  "name": "controllers",
+  "name": "baguets-controller",
   "version": "0.0.1",
   "description": "Allows to use controllers with express.js in Typescript",
   "license": "GPL",
