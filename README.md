@@ -3,86 +3,109 @@ Typescript Controller Experiment
 
 # Decorators
 ## @Controller
+Set a base route for all controller methods.
 
-    @Controller('/some-path')
-    class SomeController {
-        ...
-    }
+```typescript
+@Controller('/some-path')
+class SomeController {
+    ...
+}
+```
 
 ## @Middleware
-Any expressjs middleware is possible
+Middleware-decorators are usable for classes and methods. Any expressjs middleware is possible.
 
+```typescript
+...
+@Middleware([function(req, res, next){
+    ...
+}])
+class SomeController {
     ...
     @Middleware([function(req, res, next){
         ...
     }])
-    class SomeController {
+    someMethod(req, res, next)
+    {
         ...
-        @Middleware([function(req, res, next){}])
-        someMethod(req, res, next)
-        {
-            ...
-        }
     }
+}
+```
 
-## @Get
+## Methods
+The route path will be appended to the base route. Implemented methods are fully express compatible.
 
+### @Get
+Add a GET method. 
+
+```typescript
+...
+class SomeController {
     ...
-    class SomeController {
+    @Get('/some-path')
+    someMethod('req, res, next)
+    {
         ...
-        @Get('/some-path')
-        someMethod('req, res, next)
-        {
-            ...
-        }
     }
+}
+```
 
-## @Post
+### @Post
+Add a POST method.
 
+```typescript
+...
+class SomeController {
     ...
-    class SomeController {
+    @Post('/some-path')
+    someMethod('req, res, next)
+    {
         ...
-        @Post('/some-path')
-        someMethod('req, res, next)
-        {
-            ...
-        }
     }
+}
+```
 
-## @Put
+### @Put
+Add a PUT method.
 
+```typescript
+...
+class SomeController {
     ...
-    class SomeController {
+    @Put('/some-path')
+    someMethod('req, res, next)
+    {
         ...
-        @Put('/some-path')
-        someMethod('req, res, next)
-        {
-            ...
-        }
     }
+}
+```
 
-## @Delete
+### @Delete
+Add a DELETE method.
 
+```typescript
+...
+class SomeController {
     ...
-    class SomeController {
+    @Delete('/some-path')
+    someMethod('req, res, next)
+    {
         ...
-        @Delete('/some-path')
-        someMethod('req, res, next)
-        {
-            ...
-        }
     }
+}
+```
 
-## @Patch
+### @Patch
+Add a PATCH method.
 
+```typescript
+...
+class SomeController {
     ...
-    class SomeController {
+    @Patch('/some-path')
+    someMethod('req, res, next)
+    {
         ...
-        @Patch('/some-path')
-        someMethod('req, res, next)
-        {
-            ...
-        }
     }
-
-
+}
+```
